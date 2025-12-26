@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screenshot Analysis</title>
+
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="app">
+    <div class="panel">
+
+        <header>
+            <h1>Screenshot Analysis</h1>
+            <p>Dead Screen Detection · Productivity Tracking</p>
+        </header>
+
+        <div class="dropzone" onclick="fileInput.click()">
+            <div class="icon">📸</div>
+            <strong>Drop screenshots</strong>
+            <span>or click to browse</span>
+            <small>PNG, JPG — Multiple Allowed</small>
+        </div>
+
+        <input type="file" id="fileInput" accept="image/*" multiple hidden>
+
+        <div class="preview" id="preview"></div>
+
+        <div class="actions">
+            <div class="holographic-card" onclick="analyze()">
+                <h2>ANALYZE</h2>
+            </div>
+            <div class="holographic-card clear" onclick="clearAll()">
+                <h2>CLEAR</h2>
+            </div>
+        </div>
+
+        <div class="actions" style="margin-top: 25px;">
+            <div class="holographic-card" onclick="analyzeRange(30)">
+                <h2>PAST 30 MIN</h2>
+            </div>
+
+            <div class="holographic-card" onclick="analyzeRange(60)">
+                <h2>PAST 1 HOUR</h2>
+            </div>
+
+            <div class="holographic-card" onclick="analyzeRange(120)">
+                <h2>PAST 2 HOURS</h2>
+            </div>
+        </div>
+
+        <div class="result hidden" id="result">
+            <div class="verdict" id="verdictText"></div>
+
+            <div class="metrics">
+
+                <div class="metric blue">
+                    <div class="metric-header">
+                        <strong>Average Similarity</strong>
+                        <span id="simVal">0%</span>
+                    </div>
+                    <div class="bar">
+                        <div id="simBar"></div>
+                    </div>
+                </div>
+
+                <div class="metric red">
+                    <div class="metric-header">
+                        <strong>Suspicion Level</strong>
+                        <span id="susVal">0%</span>
+                    </div>
+                    <div class="bar">
+                        <div id="susBar"></div>
+                    </div>
+                </div>
+
+                <div class="metric green">
+                    <div class="metric-header">
+                        <strong>Productivity</strong>
+                        <span id="prodVal">0%</span>
+                    </div>
+                    <div class="bar">
+                        <div id="prodBar"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
