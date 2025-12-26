@@ -1,0 +1,60 @@
+HOW TO USE THE PRODUCTIVITY ANALYZER
+------------------------------------
+
+1) START THE SERVER
+Run:
+    uvicorn app:app --reload
+
+Then open:
+    http://127.0.0.1:8000
+
+
+2) MANUAL ANALYSIS (UPLOAD MODE)
+- Click the upload box
+- Add 2 or more screenshots
+- Click ANALYZE
+- System will:
+    · Compare screenshots
+    · Detect inactivity
+    · Show verdict + scores
+
+
+3) TIME-BASED ANALYSIS (RANGE MODE)
+- Run auto_capture.py (saves screenshots automatically)
+- Click:
+    · Past 30 mins
+    · Past 1 hour
+    · Past 2 hours
+- System will fetch all screenshots from that time range
+- Compares every pair → gives final verdict
+
+
+4) CLEAR BUTTON
+Clears the preview images and resets all metrics.
+
+
+5) OUTPUT
+You will see:
+    - Verdict
+    - Similarity percentage
+    - Suspicion score
+    - Productivity score
+
+
+6) FOLDER USAGE
+uploads/       → manually uploaded screenshots  
+auto_screens/  → auto captured screenshots  
+
+
+7) TROUBLESHOOTING
+- If no verdict appears:
+    · Ensure at least 2 images are uploaded
+- If range mode says "Not enough screenshots":
+    · Auto-capture may not be running
+- If slow:
+    · System caches processed images automatically
+
+
+8) DONE!
+Your productivity analysis system is ready to use.
+
